@@ -31,17 +31,29 @@ get_header();
 			<section class="liste-cours">
 			<?php
 			/* Start the Loop */
+            $avant = 0;
 			while ( have_posts() ) :
 				the_post();
                 propTableau($prop);
-				get_template_part( 'template-parts/content', 'liste-cours' );
+
+                if ($prop['session'] != $avant): 
+					if ($avant != 0): ?>
+						</section>
+					<?php endif; ?>	
+                <?php endif; ?>	
+					
+					<section <?php echo class_composant($prop['session']) ?>>
+                    <h2><?php echo $prop['session'] ?></h2>
+                    <?php get_template_part( 'template-parts/content', 'liste-cours' ); ?>
+                <?php 
+                $avant = $prop['session']+1;
 
 			endwhile;?>
 
 			</section>
 
 		<?php endif; ?>
-		?>
+		
 
 	</main><!-- #main -->
 
@@ -70,4 +82,27 @@ function propTableau(&$prop)
 	$prop['titrePartiel'] = substr($prop['titre'],8,-6);
 	$prop['session'] = substr($prop['titre'], 4,1);
 	$prop['typeCours'] = get_field('type_de_cours');
+    $prop['session'] = get_field('session');
+}
+
+function class_composant($session){
+
+	if ($session == '1'){
+		return 'class="cours-1"';
+	}
+	elseif ($session == '2'){
+		return 'class="cours-2"';
+	}
+    elseif ($session == '3'){
+		return 'class="cours-3"';
+	}
+    elseif ($session == '4'){
+		return 'class="cours-4"';
+	}
+    elseif ($session == '5'){
+		return 'class="cours-5"';
+	}
+    elseif ($session == '6'){
+		return 'class="cours-6"';
+	}
 }

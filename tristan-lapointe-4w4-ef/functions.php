@@ -234,14 +234,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function extraire_cours($query){
 	if ($query->is_category('cours'))
 	{
+		echo('ALLO');
 		$query->set('posts_per_page', -1);
-		$query->set('orderby', 'title');
-		$query->set('order', 'asc');
+		$query->set('meta_key', 'session');
+		$query->set('orderby', array('meta_value' => 'ASC'));
 	}
-
 }
 add_action('pre_get_posts', 'extraire_cours' );
 
+/* Trier les cours dans la section cours*/
+/*
+function extraire_liste_cours($query){
+	if ($query->is_page_template( 'template-parts/content-liste-cours.php' ))
+	{
+		echo('ALLO');
+		$query->set('posts_per_page', -1);
+		$query->set('orderby', get_field('session'));
+		$query->set('order', 'asc');
+	}
+}
+add_action('pre_get_posts', 'extraire_liste_cours' );
+*/
 /*
 L'adaptation de la requête par défaut quand on accède à la page d'accueil
 */
