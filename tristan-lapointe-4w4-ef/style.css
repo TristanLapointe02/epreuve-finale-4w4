@@ -1508,40 +1508,73 @@ La barre du millieu
 /* local cours
 --------------------------------------------- */
 .cours-6 {
-  background-color: red;
+  background-color: #ffd0d0;
 }
 
 .cours-5 {
-  background-color: #eeff00;
+  background-color: #f1f5c2;
 }
 
 .cours-4 {
-  background-color: lime;
+  background-color: #b0f7b0;
 }
 
 .cours-3 {
-  background-color: #ff00bf;
+  background-color: #f8aae5;
 }
 
 .cours-2 {
-  background-color: #1100ff;
+  background-color: #b8b4f5;
 }
 
 .cours-1 {
-  background-color: #ff8800;
+  background-color: #fcdcb8;
+}
+
+.liste-cours {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  .liste-cours {
+    display: block;
+  }
 }
 
 .liste-cours article {
   width: fit-content;
   background-color: aliceblue;
-  border-radius: 35px;
-  padding: 10px;
+  border: 2px solid black;
 }
 
-/*
-.liste-cours section{
-    display: flex;
-}*/
+.liste-cours article p, .liste-cours article a {
+  margin: 30%;
+  text-align: center;
+}
+
+.liste-cours article .nbHeure, .liste-cours article .typeDeCours {
+  visibility: hidden;
+}
+
+.liste-cours article a {
+  display: block;
+  transform: rotate(-90deg);
+}
+
+@media (min-width: 1200px) {
+  .liste-cours article {
+    padding: 20px;
+  }
+  .liste-cours article .nbHeure, .liste-cours article .typeDeCours {
+    visibility: visible;
+  }
+  .liste-cours article a, .liste-cours article p {
+    transform: rotate(0deg);
+    margin: 10%;
+  }
+}
+
 /* local page
 --------------------------------------------- */
 .site-title {

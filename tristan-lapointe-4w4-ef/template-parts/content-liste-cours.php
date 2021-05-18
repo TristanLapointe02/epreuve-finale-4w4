@@ -11,7 +11,7 @@ global $prop;
 
 <article>
     
-	<p><?php echo $prop['typeCours']?></p>
+	<p class="typeDeCours"><?php echo $prop['typeCours']?></p>
 	<a href="<?php echo get_permalink() ?>" ><?php echo $prop['sigle']; ?></a>
-	<p><?php echo $prop['nbHeure'] ?></p>
+	<p class="nbHeure"><?php echo $prop['nbHeure'] ?></p>
 </article>
