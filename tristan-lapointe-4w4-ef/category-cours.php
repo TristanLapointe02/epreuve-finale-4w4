@@ -30,8 +30,9 @@ get_header();
 			</header><!-- .page-header -->
 			<section class="liste-cours">
 			<?php
-			/* Start the Loop */
             $avant = 0;
+			/* Start the Loop */
+            
 			while ( have_posts() ) :
 				the_post();
                 propTableau($prop);
@@ -40,13 +41,13 @@ get_header();
 					if ($avant != 0): ?>
 						</section>
 					<?php endif; ?>	
-                <?php endif; ?>	
+                <?php endif; ?>
 					
 					<section <?php echo class_composant($prop['session']) ?>>
                     <h2><?php echo $prop['session'] ?></h2>
                     <?php get_template_part( 'template-parts/content', 'liste-cours' ); ?>
                 <?php 
-                $avant = $prop['session']+1;
+                $avant = $prop['session']++;
 
 			endwhile;?>
 
@@ -80,7 +81,6 @@ function propTableau(&$prop)
 	$prop['sigle'] = substr($prop['titre'], 0, 7);
 	$prop['nbHeure'] = substr($prop['titre'],-6,6);
 	$prop['titrePartiel'] = substr($prop['titre'],8,-6);
-	$prop['session'] = substr($prop['titre'], 4,1);
 	$prop['typeCours'] = get_field('type_de_cours');
     $prop['session'] = get_field('session');
 }

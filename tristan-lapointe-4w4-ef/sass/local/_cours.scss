@@ -1,22 +1,29 @@
-/*.cours-6 {
+.cours-6 {
     background-color: red;
 }
 .cours-5 {
     background-color: rgb(238, 255, 0);
 }
 .cours-4 {
-    background-color: red;
+    background-color: rgb(0, 255, 0);
 }
 .cours-3 {
-    background-color: red;
+    background-color: rgb(255, 0, 191);
 }
 .cours-2 {
-    background-color: red;
+    background-color: rgb(17, 0, 255);
 }
 .cours-1 {
-    background-color: red;
+    background-color: rgb(255, 136, 0);
 }
 
+.liste-cours article {
+    width: fit-content;
+    background-color: aliceblue;
+    border-radius: 35px;
+    padding: 10px;
+}
+/*
 .liste-cours section{
     display: flex;
 }*/

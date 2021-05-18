@@ -1507,25 +1507,38 @@ La barre du millieu
 
 /* local cours
 --------------------------------------------- */
-/*.cours-6 {
-    background-color: red;
-}
-.cours-5 {
-    background-color: rgb(238, 255, 0);
-}
-.cours-4 {
-    background-color: red;
-}
-.cours-3 {
-    background-color: red;
-}
-.cours-2 {
-    background-color: red;
-}
-.cours-1 {
-    background-color: red;
+.cours-6 {
+  background-color: red;
 }
 
+.cours-5 {
+  background-color: #eeff00;
+}
+
+.cours-4 {
+  background-color: lime;
+}
+
+.cours-3 {
+  background-color: #ff00bf;
+}
+
+.cours-2 {
+  background-color: #1100ff;
+}
+
+.cours-1 {
+  background-color: #ff8800;
+}
+
+.liste-cours article {
+  width: fit-content;
+  background-color: aliceblue;
+  border-radius: 35px;
+  padding: 10px;
+}
+
+/*
 .liste-cours section{
     display: flex;
 }*/
